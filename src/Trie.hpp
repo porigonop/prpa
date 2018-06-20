@@ -12,5 +12,5 @@ class Trie
     Trie(const std::initializer_list<std::string> &init);
     void accept(Visitor v);
     private:
-        std::vector<Node> first_letter_;
+        std::vector<Node> first_letters_;
 };
