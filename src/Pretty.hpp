@@ -7,9 +7,8 @@ class Pretty:public Visitor
 {
   public:
     Pretty();
-    virtual void visit(Node* n);
+    virtual void operator()(Node* n);
+    virtual void operator()(Trie* t);
 
   private:
-    std::vector<Node> letters_;
-    std::string str_;
 };

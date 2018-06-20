@@ -8,9 +8,15 @@ Pretty::Pretty()
 {
 }
 
-Pretty::visit(Node* n)
+Pretty::operator()(Node* n)
 {
-  std::string str;
-  str_ = str;
-  n.insert(str);
+
+}
+
+Pretty::operator()(Trie* t)
+{
+  for (auto i = sons_.begin(); i != sons_.end(); i++)
+  {
+    t.accept(this);
+  }
 }
