@@ -11,6 +11,8 @@ Node::Node(char c)
 
 void Node::insert(std::string str)
 {
+    if (str.lenght() == 0)
+        return;
     for (auto node : sons_)
     {
         if (node.c_ == str[0])
@@ -30,4 +32,21 @@ void Node::insert(std::string str)
     else
         newnode.insert(str.substr(1));
     sons_.push_back(newnode);
+}
+
+void Node::erase(std::string str)
+{
+    if (str.lenght() == 0)
+    {
+        is_end = false;
+        return;
+    }
+    for (auto node : sons_)
+    {
+        if (node.c_ == str[0])
+        {
+            node.erase(str.substr(1));
+            return;
+        }
+    }
 }
